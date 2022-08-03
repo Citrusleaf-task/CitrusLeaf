@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "d42ef9e4-1d67-4561-b86f-8971b82ecc39",
+		"name": "citusleaf",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19251497"
+	},
+	"item": [
+		{
+			"name": "User register -- any user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"ramakant\",\r\n    \"email\":\"rama1@gmail.com\",\r\n    \"password\":\"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Login -- register user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWFAZ21haWwuY29tIiwiaWF0IjoxNjU5NDQzMTE1LCJleHAiOjE2NTk1Mjk1MTV9.LvhvAr5Y3sM7no0TTgD7ORjUyD5atMHSqwwMFK2vf94",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"rama@gmail.com\",\r\n    \"password\":\"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADD TASK --user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWFAZ21haWwuY29tIiwiaWF0IjoxNjU5NDQzMTE1LCJleHAiOjE2NTk1Mjk1MTV9.LvhvAr5Y3sM7no0TTgD7ORjUyD5atMHSqwwMFK2vf94",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "create ",
+							"type": "text"
+						},
+						{
+							"key": "due_date",
+							"value": "1993-01-02",
+							"type": "text"
+						},
+						{
+							"key": "attachment",
+							"type": "file",
+							"src": "/C:/Users/VIRENDRA/OneDrive/Documents/VIRENDRA UIKEY.pdf"
+						},
+						{
+							"key": "email",
+							"value": "rama1@gmail.com",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/add-task",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"add-task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SingleUser --- All task",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWFAZ21haWwuY29tIiwiaWF0IjoxNjU5NDQzMTE1LCJleHAiOjE2NTk1Mjk1MTV9.LvhvAr5Y3sM7no0TTgD7ORjUyD5atMHSqwwMFK2vf94",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "rama@gmail.com",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete --user task",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWFAZ21haWwuY29tIiwiaWF0IjoxNjU5NDQzMTE1LCJleHAiOjE2NTk1Mjk1MTV9.LvhvAr5Y3sM7no0TTgD7ORjUyD5atMHSqwwMFK2vf94",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update --user task",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWFAZ21haWwuY29tIiwiaWF0IjoxNjU5NDQzMTE1LCJleHAiOjE2NTk1Mjk1MTV9.LvhvAr5Y3sM7no0TTgD7ORjUyD5atMHSqwwMFK2vf94",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \"title\": \"google \",\r\n            \"due_date\": \"1993-01-01T18:30:00.000Z\"\r\n            \r\n           \r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
